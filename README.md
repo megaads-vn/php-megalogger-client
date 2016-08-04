@@ -2,13 +2,13 @@
 
 ##Installation:
 ```javascript
-composer require megaads-vn/php-megalogger-client
+composer require megaads-vn/megalogger
 ```
 ###OR
 **add in file composer.json**
 ```javascript
 "require": {
-	"megaads-vn/php-megalogger-client":"dev-master"
+	"megaads-vn/megalogger":"dev-master"
 }
 ```
 ##Usage:
@@ -17,7 +17,7 @@ composer require megaads-vn/php-megalogger-client
 ```
 use MegaLogger\Logger;
 
-$apiKey = "asfkjewf46388asfafsf_megaToken";
+$apiKey = "asfkjewf46388asfafsf";
 $loggerClient = new Logger($apiKey);
 
 // Get level: info, debug, warning, error, critical
