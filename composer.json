@@ -1,8 +1,8 @@
 {
-    "name": "megadevelop/php-megalogger-client",
+    "name": "megaads-vn/php-megalogger-client",
     "description": "Client lib off megalogger",
-    "keywords": ["megalogger client", "megadevelop", "megalogger"],
-    "license": "MEGA",
+    "keywords": ["megalogger client", "megaads-vn", "megalogger"],
+    "license": "MEGAADS.VN",
     "authors": [
         {
             "name": "Mega dev team",

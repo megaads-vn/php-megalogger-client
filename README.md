@@ -2,13 +2,13 @@
 
 ##Installation:
 ```javascript
-composer require megadevelop/php-megalogger-client
+composer require megaads-vn/php-megalogger-client
 ```
 ###OR
 **add in file composer.json**
 ```javascript
 "require": {
-	"megadevelop/php-megalogger-client":"dev-master"
+	"megaads-vn/php-megalogger-client":"dev-master"
 }
 ```
 ##Usage:
