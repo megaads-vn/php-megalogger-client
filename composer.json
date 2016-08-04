@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "LoggerClients\\": "src/LoggerClients"
+            "MegaLogger\\": "src/MegaLogger"
         }
     }
 }

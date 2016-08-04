@@ -1,10 +1,10 @@
 <?php
 
-namespace LoggerClients;
+namespace MegaLogger;
 
 use Emarref\Jwt\Claim;
 
-class LoggerClient {
+class Logger {
 
     private $apiKey;
 
@@ -65,7 +65,7 @@ class LoggerClient {
     }
 
     private static function _http() {
-        return new \LoggerClients\Http\Http();
+        return new \MegaLogger\Http\Http();
     }
 
 }

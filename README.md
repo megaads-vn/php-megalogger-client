@@ -12,13 +12,13 @@ composer require megaads-vn/php-megalogger-client
 }
 ```
 ##Usage:
-**Create an instance of the LoggerClients\LoggerClient class**
+**Create an instance of the MegaLogger\Logger class**
 
 ```
-use LoggerClients\LoggerClient;
+use MegaLogger\Logger;
 
 $apiKey = "asfkjewf46388asfafsf_megaToken";
-$loggerClient = new LoggerClient($apiKey);
+$loggerClient = new Logger($apiKey);
 
 // Get level: info, debug, warning, error, critical
 $levelObj = new Level();

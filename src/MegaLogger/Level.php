@@ -1,6 +1,6 @@
 <?php
 
-namespace LoggerClients;
+namespace MegaLogger;
 
 class Level {
     const LEVEL_INFO = 'info';

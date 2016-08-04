@@ -1,6 +1,6 @@
 <?php
 
-namespace LoggerClients\Http;
+namespace MegaLogger\Http;
 
 class Http {
 
