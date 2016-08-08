@@ -7,12 +7,14 @@ use Emarref\Jwt\Claim;
 class Logger {
 
     private $apiKey;
+    private $source;
 
-    public function __construct($apiKey) {
-        self::_setApiKey($apiKey);
+    public function __construct($initData) {
+        self::_setApiKey($initData['apiKey']);
+        self::_setSource($initData['source']);
     }
 
-    public function pushLog($level = null, $data = [], $source = '') {
+    public function pushLog($level = null, $data = []) {
         $token = self::_generateToken();
         $retVal = array(
             'status' => 'failed',
@@ -34,7 +36,7 @@ class Logger {
                     'token' => $token,
                     'level' => $level,
                     'time' => $time,
-                    'source' => $source,
+                    'source' => $this->source,
                     'data' => $data,
                     'meta' => $metaData
                 );
@@ -52,6 +54,10 @@ class Logger {
 
     private function _setApiKey($apiKey) {
         $this->apiKey = $apiKey;
+    }
+
+    private function _setSource($source) {
+        $this->source = $source;
     }
 
     private function _generateToken() {

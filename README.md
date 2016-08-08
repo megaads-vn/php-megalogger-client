@@ -17,18 +17,22 @@ composer require megaads-vn/megalogger
 ```
 use MegaLogger\Logger;
 
-$apiKey = "asfkjewf46388asfafsf";
-$loggerClient = new Logger($apiKey);
+$apiKey = "asefas_efjhj-afsd64sf";
+$source = "Your source";
+$initData = array(
+    'apiKey' => $apiKey,
+    'source' => $source
+);
+$loggerClient = new Logger($initData);
 
 // Get level: info, debug, warning, error, critical
 $levelObj = new Level();
 $level = $levelObj->getLevelInfo();
-$source = 'source_log';
 
 $data = array("message" => "Message attachment token");
 //push log 
 
-$response = $loggerClient->pushLog($level, $data, $source);
+$response = $loggerClient->pushLog($level, $data);
 echo '<pre>';
 print_r($response);
 echo '</pre>';
