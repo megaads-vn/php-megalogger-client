@@ -5,7 +5,7 @@ namespace MegaLogger\Http;
 class Http {
 
     const HOST = '192.168.1.172:8161';
-    const END_POINT = '/api/message?destination=queue://logger';
+    const END_POINT = 'api/message?destination=queue://logger';
 
     public function getClientIp() {
         $ipaddress = '';
