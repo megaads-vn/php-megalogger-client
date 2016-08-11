@@ -4,11 +4,8 @@ namespace MegaLogger\Http;
 
 class Http {
 
-    const BASE_URL = 'http://192.168.1.172:8161';
-
-    public function getBaseUrl() {
-        return self::BASE_URL;
-    }
+    const HOST = '192.168.1.172:8161';
+    const END_POINT = '/api/message?destination=queue://logger';
 
     public function getClientIp() {
         $ipaddress = '';
@@ -92,11 +89,12 @@ class Http {
         );
     }
 
-    public function curlExec($host, $strParams) {
-        $process = curl_init($host);
+    public function curlExec($strParams) {
+        $url = sprintf("http://%s/%s/", self::HOST, self::END_POINT);
+        $process = curl_init($url);
         curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($process, CURLOPT_HEADER, 1);
-        curl_setopt($process, CURLOPT_USERPWD, "admin" . ":" . "admin");
+//        curl_setopt($process, CURLOPT_USERPWD, "admin" . ":" . "admin");
         curl_setopt($process, CURLOPT_TIMEOUT, 2000);
         curl_setopt($process, CURLOPT_POST, 1);
         curl_setopt($process, CURLOPT_POSTFIELDS, $strParams);

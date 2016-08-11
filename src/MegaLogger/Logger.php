@@ -40,9 +40,8 @@ class Logger {
                     'data' => $data,
                     'meta' => $metaData
                 );
-                $url = self::_http()->getBaseUrl() . "/api/message?destination=queue://logger";
                 $strParams = json_encode($params);
-                $output = self::_http()->curlExec($url, $strParams);
+                $output = self::_http()->curlExec($strParams);
                 $retVal['status'] = 'ok';
                 $retVal['response'] = $output;
             }
@@ -63,8 +62,9 @@ class Logger {
     private function _generateToken() {
         $token = new \Emarref\Jwt\Token();
         $token->addClaim(new Claim\Audience([$this->apiKey]));
+        $token->addClaim(new Claim\Expiration(new \DateTime('30 seconds')));
         $jwt = new \Emarref\Jwt\Jwt();
-        $algorithm = new \Emarref\Jwt\Algorithm\HS512('megadev_secret');
+        $algorithm = new \Emarref\Jwt\Algorithm\HS512('megalogger');
         $encryption = \Emarref\Jwt\Encryption\Factory::create($algorithm);
         $serializedToken = $jwt->serialize($token, $encryption);
         return $serializedToken;
