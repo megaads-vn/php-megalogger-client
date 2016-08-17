@@ -61,7 +61,7 @@ class Logger {
 
     private function _generateToken() {
         $token = new \Emarref\Jwt\Token();
-        $token->addClaim(new Claim\Audience([$this->apiKey]));
+        $token->addClaim(new Claim\Audience($this->apiKey));
         $token->addClaim(new Claim\Expiration(new \DateTime('30 seconds')));
         $jwt = new \Emarref\Jwt\Jwt();
         $algorithm = new \Emarref\Jwt\Algorithm\HS512('megalogger');
