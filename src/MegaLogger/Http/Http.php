@@ -90,7 +90,7 @@ class Http {
     }
 
     public function curlExec($strParams) {
-        $url = sprintf("http://%s/%s/", self::HOST, self::END_POINT);
+        $url = sprintf("http://%s/%s", self::HOST, self::END_POINT);
         $process = curl_init($url);
         curl_setopt($process, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
         curl_setopt($process, CURLOPT_HEADER, 1);
