@@ -4,7 +4,7 @@ namespace MegaLogger\Http;
 
 class Http {
 
-    const HOST = 'logger.megaads.vn:8800';
+    const HOST = 'hamster.megaads.vn:8161';
     const END_POINT = 'api/message?destination=queue://logger';
 
     public function getClientIp() {
