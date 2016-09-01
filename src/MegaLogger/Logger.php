@@ -17,7 +17,7 @@ class Logger {
     public function pushLog($level = null, $data = []) {
         $token = self::_generateToken();
         $title = $data['title'];
-        $data = unset($data['title']);
+        unset($data['title']);
         $retVal = array(
             'status' => 'failed',
         );
