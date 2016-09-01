@@ -29,7 +29,7 @@ $loggerClient = new Logger($initData);
 $levelObj = new Level();
 $level = $levelObj->getLevelInfo();
 
-$data = array("message" => "Message attachment token");
+$data = array("message" => "Message attachment token", "title" => "Title for push log");
 //push log 
 
 $response = $loggerClient->pushLog($level, $data);
