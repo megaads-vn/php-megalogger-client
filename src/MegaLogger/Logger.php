@@ -8,10 +8,12 @@ class Logger {
 
     private $apiKey;
     private $source;
+    private $title;
 
     public function __construct($initData) {
         self::_setApiKey($initData['apiKey']);
         self::_setSource($initData['source']);
+        self::_setTitle($initData['title']);
     }
 
     public function pushLog($level = null, $data = []) {
@@ -33,6 +35,7 @@ class Logger {
 
                 $params = array(
                     'type' => 'request',
+                    'title' => $this->title,
                     'token' => $token,
                     'level' => $level,
                     'time' => $time,
@@ -57,6 +60,10 @@ class Logger {
 
     private function _setSource($source) {
         $this->source = $source;
+    }
+
+    private function _setTitle($title){
+        $this->title = $title;
     }
 
     private function _generateToken() {
