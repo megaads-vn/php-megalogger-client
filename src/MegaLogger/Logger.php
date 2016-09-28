@@ -67,7 +67,7 @@ class Logger {
         $token->addClaim(new Claim\Audience($this->apiKey));
         $token->addClaim(new Claim\Expiration(new \DateTime('30 seconds')));
         $jwt = new \Emarref\Jwt\Jwt();
-        $algorithm = new \Emarref\Jwt\Algorithm\HS512('megalogger');
+        $algorithm = new \Emarref\Jwt\Algorithm\Hs512('megalogger');
         $encryption = \Emarref\Jwt\Encryption\Factory::create($algorithm);
         $serializedToken = $jwt->serialize($token, $encryption);
         return $serializedToken;
